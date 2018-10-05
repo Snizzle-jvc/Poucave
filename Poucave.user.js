@@ -2,8 +2,8 @@
 // @name        POUCAVE
 // @author      Snizzle
 // @version     1.0
-// @downloadURL link
-// @updateURL   link
+// @downloadURL https://github.com/Snizzle-jvc/Poucave/raw/master/Poucave.user.js
+// @updateURL   https://github.com/Snizzle-jvc/Poucave/raw/master/Poucave.user.js
 // @supportURL  http://www.jeuxvideo.com/messages-prives/nouveau.php?all_dest=Snizzle,Snitchzzle
 // @copyright   2018, Snizzle
 // @licence     MIT
