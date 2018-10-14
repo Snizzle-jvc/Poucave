@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        POUCAVE
 // @author      Snizzle
-// @version     2.3
+// @version     2.4
 // @downloadURL https://github.com/Snizzle-jvc/Poucave/raw/master/Poucave.user.js
 // @updateURL   https://github.com/Snizzle-jvc/Poucave/raw/master/Poucave.user.js
 // @supportURL  http://www.jeuxvideo.com/messages-prives/nouveau.php?all_dest=Snizzle,Snitchzzle
