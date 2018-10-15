@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        POUCAVE
 // @author      Snizzle
-// @version     2.8
+// @version     2.9
 // @downloadURL https://github.com/Snizzle-jvc/Poucave/raw/master/Poucave.user.js
 // @updateURL   https://github.com/Snizzle-jvc/Poucave/raw/master/Poucave.user.js
 // @supportURL  http://www.jeuxvideo.com/messages-prives/nouveau.php?all_dest=Snizzle,Snitchzzle
@@ -22,23 +22,23 @@ $(function(a) {
   var g = Object.keys(JSON.parse(localStorage.getItem("Message"))).length, h = Object.keys(JSON.parse(localStorage.getItem("Topic"))).length;
   a(".col-right").prepend("<div class='panel panel-jv-forum panel-poucave' style='background:#e2e2e2'><div class='panel-body'><div class='scrollable'><div class='scrollable-wrapper'><div class='scrollable-content bloc-sous-forums'><ul class='liste-sous-forums'><li class='line-ellipsis'><div class='btn btn-actu-new-list-forum' id='poucave-mod' title='Topic de mod\u00e9ration choisi' style='background-color: #3a83a9;border-color: #2e6e90;border-radius: 0;color: white;min-width: 100%;'>Topic de mod\u00e9ration :</div></li><li class='line-ellipsis'><div class='btn btn-actu-new-list-forum' id='poucave-clear' title='Vider la liste de signalements' style='background-color: #3a83a9;border-color: #2e6e90;border-radius: 0;color: white;min-width: 100%;'>Vider la liste de signalements</div></li><li class='line-ellipsis'style='border-bottom: 1px solid #c1c1c1;'><div class='btn btn-actu-new-list-forum' id='poucave-send-topic' title='Poucaaaave' style='margin-right: 10px; background-color: red; border-color: #c70b0b;border-radius: 0; color: white; min-width: 100%;margin-bottom: 20px;' >poucave</div></li><div class='poucave-count' style='color:black;margin-top: 15px;'><span id='topiccount'>" + 
   h + "</span> Topic(s)<br><span id='msgcount'>" + g + "</span> Message(s)</div></ul></div></div></div></div></div>");
-  null === f && (f = "");
+  null === f && (f = "undefined");
   if (null === c || 0 == c) {
     c = "", alert("Vous n'avez pas sp\u00e9cifi\u00e9 de topic de Mod\u00e9ration");
   }
   null !== localStorage.getItem("Topic") && localStorage.getItem("Topic").includes(e) && a("#poucave-save-topic").hide();
   a(".save-msg").each(function() {
-    var d = "http://www.jeuxvideo.com" + a(this).parents().eq(1).find(".bloc-date-msg").children().attr("href");
-    null !== localStorage.getItem("Message") && localStorage.getItem("Message").includes(d) && a(this).hide();
+    var b = "http://www.jeuxvideo.com" + a(this).parents().eq(1).find(".bloc-date-msg").children().attr("href");
+    null !== localStorage.getItem("Message") && localStorage.getItem("Message").includes(b) && a(this).hide();
   });
   a(".save-msg").click(function() {
-    var d = "http://www.jeuxvideo.com" + a(this).parents().eq(1).find(".bloc-date-msg").children().attr("href");
-    if (null !== localStorage.getItem("Message") && localStorage.getItem("Message").includes(d)) {
+    var b = "http://www.jeuxvideo.com" + a(this).parents().eq(1).find(".bloc-date-msg").children().attr("href");
+    if (null !== localStorage.getItem("Message") && localStorage.getItem("Message").includes(b)) {
       return a(this).hide(), alert("Message d\u00e9j\u00e0 signal\u00e9");
     }
-    var b = prompt("Raison du signalement", ""), c = "'''" + b + "'''";
-    "" === b && (c = "");
-    null === b ? alert("Le message n'a pas \u00e9t\u00e9 enregistr\u00e9!") : (b = "[MSG] " + c + " : ", c = JSON.parse(localStorage.getItem("Message")) || [], c.push(b + d + "\n"), localStorage.setItem("Message", JSON.stringify(c)), a("#msgcount").html(++g), a(this).hide());
+    var d = prompt("Raison du signalement", ""), c = "'''" + d + "'''";
+    "" === d && (c = "");
+    null === d ? alert("Le message n'a pas \u00e9t\u00e9 enregistr\u00e9!") : (d = "[MSG] " + c + " : ", c = JSON.parse(localStorage.getItem("Message")) || [], c.push(d + b + "\n"), localStorage.setItem("Message", JSON.stringify(c)), a("#msgcount").html(++g), a(this).hide());
   });
   a("#poucave-clear").click(function() {
     if ("0" !== localStorage.getItem("Topic") || "0" !== localStorage.getItem("Message")) {
@@ -48,29 +48,28 @@ $(function(a) {
     }
   });
   a("#poucave-save-topic").click(function() {
-    var d = prompt("Raison du signalement", ""), b = "'''" + d + "'''";
-    "" === d && (b = "");
-    null === d ? alert("Le topic n'a pas \u00e9t\u00e9 enregistr\u00e9!") : (d = "[TOPIC] " + b + " : ", b = JSON.parse(localStorage.getItem("Topic")) || [], b.push(d + e + "\n"), localStorage.setItem("Topic", JSON.stringify(b)), a("#topiccount").html(++h), a(this).hide());
+    var b = prompt("Raison du signalement", ""), d = "'''" + b + "'''";
+    "" === b && (d = "");
+    null === b ? alert("Le topic n'a pas \u00e9t\u00e9 enregistr\u00e9!") : (b = "[TOPIC] " + d + " : ", d = JSON.parse(localStorage.getItem("Topic")) || [], d.push(b + e + "\n"), localStorage.setItem("Topic", JSON.stringify(d)), a("#topiccount").html(++h), a(this).hide());
   });
   a("#poucave-mod").click(function() {
-    var a = prompt("Collez le lien du topic de mod\u00e9ration", c);
-    if (null !== a && "" !== a) {
-      var b = prompt("Donnez un nom \u00e0 ce forum (par exemple : 18-25)");
-      if (null === b || 0 == b) {
-        b = "";
-      }
-      localStorage.setItem("Moderation", a);
+    var b = prompt("Collez le lien du topic de mod\u00e9ration", c);
+    null === b || "" === b || 0 == b ? localStorage.removeItem("Alias") : (localStorage.setItem("Moderation", b), a.get(b, function(b) {
+      b = a(b).find(".gameHeaderBanner__title").html() || a(b).find(".fil-ariane-crumb span").children().eq(2).html();
       localStorage.setItem("Alias", b);
       location.reload();
-    }
+    }).fail(function() {
+      alert("Veuillez renseigner une URL correcte");
+      localStorage.removeItem("Alias");
+    }));
   });
   a("#poucave-mod").html("Topic de mod\u00e9ration : " + f);
   a("#poucave-send-topic").click(function() {
     if (null === c || 0 == c) {
       return alert("Vous n'avez pas sp\u00e9cifi\u00e9 de topic de Mod\u00e9ration");
     }
-    var a = JSON.parse(localStorage.getItem("Topic")) || [], b = JSON.parse(localStorage.getItem("Message")) || [];
-    a = a.join("") + b.join("");
+    var a = JSON.parse(localStorage.getItem("Topic")) || [], d = JSON.parse(localStorage.getItem("Message")) || [];
+    a = a.join("") + d.join("");
     "" === a ? alert("Rien \u00e0 poucave !") : 1 == confirm("Veux-tu poucave maintenant ?\n" + a) && window.open(c + "#pouc").focus();
   });
   e === c + "#pouc" && (a("#message_topic").focus().text(k.join("") + l.join("")), localStorage.removeItem("Topic"), localStorage.removeItem("Message"), a(".js-post-message").click());
