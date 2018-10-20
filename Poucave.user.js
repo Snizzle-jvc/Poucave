@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name        POUCAVE
 // @author      Snizzle
-// @version     3.1
+// @version     3.2
 // @downloadURL https://github.com/Snizzle-jvc/Poucave/raw/master/Poucave.user.js
 // @updateURL   https://github.com/Snizzle-jvc/Poucave/raw/master/Poucave.user.js
-// @supportURL  http://www.jeuxvideo.com/messages-prives/nouveau.php?all_dest=Snizzle,Snitchzzle
+// @supportURL  http://www.jeuxvideo.com/messages-prives/nouveau.php?all_dest=Snizzle;Snitchzzle
 // @copyright   2018, Snizzle
 // @licence     MIT
 // @description Poucave à la modé n'a jamais été aussi simple
